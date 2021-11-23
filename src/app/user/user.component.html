@@ -1,0 +1,40 @@
+
+<div class="userBox">
+
+    <div class="subCategory">
+    {{ user.name }} <a (click)="dragonglass()"><span style="font-size:smaller; background:inherit;">[{{ user.accountId }}]</span></a>
+    
+    </div>
+
+    <div class="subCategory">
+        {{ balance }}ℏ
+        </div>
+    
+        
+        <div class="userToken">
+        <div class="subCategory" style="padding-left:25px;">
+        
+            <div *ngIf="associated; then associatedEnabled else associatedDisabled"></div>
+            <ng-template #associatedEnabled>
+                <img class="appicon" style="vertical-align:sub;" src="../../assets/img/icons/check.svg">{{ demoService.tokenInfo.name }}
+            </ng-template>
+            <ng-template #associatedDisabled>
+                <img class="appicon" style="vertical-align:sub;" src="../../assets/img/icons/circle.svg">  {{ demoService.tokenInfo.name }} 
+            </ng-template>
+        </div>
+        <div class="subCategory">
+            <div *ngIf="amount != null; then amountEnabled else amountDisabled"></div>
+            <ng-template #amountEnabled>
+                {{amount}} {{ demoService.tokenInfo.symbol }}
+            </ng-template>
+            <ng-template #amountDisabled>
+                0 {{ demoService.tokenInfo.symbol }}
+            </ng-template>
+        </div>
+        </div>
+        
+</div>
+<div *ngIf="!associated; then showAssociateButton"></div>
+            <ng-template #showAssociateButton>
+<button (click)="associate(demoService.tokenInfo.tokenId)" class="buttonBlue" style="margin-top:20px;margin-bottom:20px;">Associate With {{ demoService.tokenInfo.symbol }}</button>
+</ng-template>

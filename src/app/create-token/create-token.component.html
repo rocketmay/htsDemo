@@ -1,0 +1,60 @@
+
+<div class="fill">
+    <div class="row">
+      <div class="columnleft">
+        <app-left-menu></app-left-menu>
+      </div>
+  
+      <div class="column">
+    
+        <div class="contentTitle boxShadow cornersAll contentHeader">
+            TOKEN CREATION PROCESS
+        </div>
+  
+        <div class="centerDiv" style="text-align:center;">
+          <div *ngIf="isSubmit(); then signEnabled"></div>
+          <ng-template #signEnabled>
+            <button class="selectBlue" style="margin-right:10px; background: #357FEB;" (click)="buttonSign()">SIGN</button>              
+          </ng-template>
+        
+          <button class="selectBlue" style="margin-right:10px; background: #357FEB;" (click)="buttonPress()">{{ buttonTitle }}</button>
+        </div>
+
+
+        <div class="contentTitle boxShadow cornersTop">
+            {{ stepTitle }}
+        <div class="contentright">
+            <!--<img src="./../../assets/img/icons/hamburger-menu.svg" class="appicon">-->
+        </div>
+        </div>
+        
+        <div class="contentBody boxShadow cornersBot console">
+            <div class="contentLeft">
+  
+              <div class="subCategory baseCategory">
+                <ul class="list-group">
+                    
+                    <li  *ngFor="let line of consoleText" class="list-group-item" >
+                        {{ line }}
+                      </li>
+                    </ul>
+
+              </div>
+  
+  
+  
+  
+            </div>
+        </div>
+  
+        <div class="centerDiv">
+        <button class="buttonBlue" (click)="clearConsole()">CLEAR</button>
+        </div>
+
+        </div>
+      <div class="columnright">
+        <app-tokenstat></app-tokenstat>
+        </div>
+    </div>
+    </div>
+    

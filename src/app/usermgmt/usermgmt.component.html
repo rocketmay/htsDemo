@@ -1,0 +1,91 @@
+
+<div class="fill">
+  <div class="row">
+    <div class="columnleft">
+      <app-left-menu></app-left-menu>
+    </div>
+
+    <div class="column">
+  
+      <div class="contentTitle boxShadow cornersAll contentHeader">
+          USER MANAGEMENT
+      </div>
+
+      <div class="contentTitle boxShadow cornersTop">
+          
+      <div class="contentright">
+          <!--<img src="./../../assets/img/icons/hamburger-menu.svg" class="appicon">-->
+      </div>
+      </div>
+      
+      <div class="contentBody boxShadow cornersBot">
+          <div class="contentLeft">
+
+            <div class="subCategory baseCategory">
+            <div *ngIf="KYCKey; then KYCEnabled else KYCDisabled"></div>
+            <ng-template #KYCDisabled>
+                <a (click)="toggleKYCKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Set KYC Key </a>
+            </ng-template>
+            <ng-template #KYCEnabled>
+                <a (click)="toggleKYCKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> KYC Key </a>
+                
+                <div class="subCategory">
+                    <div *ngIf="manuaKYCKey; then manualKYCKeyEnabled else manualKYCKeyDisabled"></div>
+                <ng-template #manualKYCKeyDisabled>
+                    <a (click)="toggleManualKYCKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual KYC Key </a>
+                </ng-template>
+                <ng-template #manualKYCKeyEnabled>
+                    <a (click)="toggleManualKYCKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual KYC Key </a>
+                </ng-template>
+
+                <input type="text" id="KYCKey" name="KYCKey" [(ngModel)]="demoService.tokenInfo.KYCKey" [ngModelOptions]="{standalone: true}" [disabled]="!manualKYCKey">
+                
+                </div>
+            </ng-template>
+            </div>
+
+
+            <div class="subCategory baseCategory">
+            <div *ngIf="freezeKey; then freezeEnabled else freezeDisabled"></div>
+            <ng-template #freezeDisabled>
+                <a (click)="toggleFreezeKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Set Freeze Key </a>
+            </ng-template>
+            <ng-template #freezeEnabled>
+                <a (click)="toggleFreezeKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Freeze Key </a>
+                
+                <div class="subCategory">
+                  <div *ngIf="freezeDefault; then freezeDefaultEnabled else freezeDefaultDisabled"></div>
+                  <ng-template #freezeDefaultDisabled>
+                      <a (click)="toggleFreezeDefault()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Accounts NOT Frozen by Default </a>
+                  </ng-template>
+                  <ng-template #freezeDefaultEnabled>
+                      <a (click)="toggleFreezeDefault()"><img class="appicon" src="../../assets/img/icons/check.svg"> Accounts Frozen by Default </a>
+                  </ng-template>
+                  </div>
+      
+
+                <div class="subCategory">
+                    <div *ngIf="manualFreezeKey; then manualFreezeKeyEnabled else manualFreezeKeyDisabled"></div>
+                <ng-template #manualFreezeKeyDisabled>
+                    <a (click)="toggleManualFreezeKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual Freeze Key </a>
+                </ng-template>
+                <ng-template #manualFreezeKeyEnabled>
+                    <a (click)="toggleManualFreezeKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual Freeze Key </a>
+                </ng-template>
+
+                <input type="text" id="freezeKey" name="freezeKey" [(ngModel)]="demoService.tokenInfo.freezeKey" [ngModelOptions]="{standalone: true}" [disabled]="!manualFreezeKey">
+                
+                </div>
+            </ng-template>
+            </div>
+
+
+          </div>
+      </div>
+</div>
+    <div class="columnright">
+      <app-tokenstat></app-tokenstat>
+      </div>
+  </div>
+  </div>
+  

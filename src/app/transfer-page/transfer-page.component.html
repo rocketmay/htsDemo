@@ -1,0 +1,71 @@
+
+<div class="fill">
+    <div class="row">
+      <div class="columnleft">
+        <app-left-menu></app-left-menu>
+      </div>
+  
+      <div class="column">
+    
+        <div class="contentTitle boxShadow cornersAll contentHeader">
+            TOKEN TRANSFER DEMO
+            <div class="contentright">
+                <a (click)="triggerUserBoxes()"><img class="appicon" style="margin-bottom:-5px;" src="../../assets/img/icons/refresh.svg"></a>
+            </div>
+        </div>
+  
+        <div style="height:280px; margin: 0 auto; margin-top:20px; background:inherit;">
+        
+        <div class="userColumn">
+        <app-user [change]=changeT [user]="demoService.treasuryAccount"></app-user>
+        </div>
+        <div class="userColumn">
+        <app-user [change]=changeA [user]="demoService.userA"></app-user>
+        </div>
+        <div class="userColumn">
+        <app-user [change]=changeB [user]="demoService.userB"></app-user>
+        </div>
+        </div>
+
+
+        <div class="contentBody cornersAll" style="margin-top:10px;margin-bottom:10px;background:inherit;display:inline-block;">
+            <button (click)="transfer()" class="selectBlue" style="margin-right:10px;background: #357FEB;">TRANSFER</button> 
+            <input name="inputAmount"  [(ngModel)]="amount" class="selectBlue" style="height:30px; display:inline; width:150px"> {{ demoService.tokenInfo.symbol }} from 
+            
+            <select name="sender" id="sender" [(ngModel)]="sender" class="selectBlue">
+                <option>Treasury</option>
+                <option>Alice</option>
+                <option>Bob</option>
+            </select> 
+            to 
+            <select name="target" id="target"  [(ngModel)]="target" class="selectBlue">
+                <option>Alice</option>
+                <option>Bob</option>
+            </select>
+            </div>
+
+            <!--
+
+        <div class="contentTitle boxShadow cornersTop">
+            
+            <div class="contentright">
+               
+            </div>
+        </div>
+
+        <div class="contentBody boxShadow cornersBot">
+            <div class="contentLeft">
+
+                <div class="subCategory console" style="height:300px">
+
+                </div>
+            </div>
+        </div>
+    -->    
+  </div>
+      <div class="columnright">
+        <app-tokenstat></app-tokenstat>
+        </div>
+    </div>
+    </div>
+    

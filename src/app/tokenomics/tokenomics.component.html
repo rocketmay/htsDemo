@@ -1,0 +1,98 @@
+
+<div class="fill">
+    <div class="row">
+      <div class="columnleft">
+        <app-left-menu></app-left-menu>
+      </div>
+  
+      <div class="column">
+    
+        <div class="contentTitle boxShadow cornersAll contentHeader">
+            TOKENOMICS
+        </div>
+
+        <div class="contentTitle boxShadow cornersTop">
+            
+        <div class="contentright">
+            <!--<img src="./../../assets/img/icons/hamburger-menu.svg" class="appicon">-->
+        </div>
+        </div>
+        
+        <div class="contentBody boxShadow cornersBot">
+            <div class="contentLeft">
+
+            <div class="subCategory">
+            Decimals
+            <input type="text" class="info" id="decimal" name="decimal" [(ngModel)]="decimal" (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}" >
+            </div>
+            <div class="subCategory">
+            Initial Supply <span style="color:rgb(255, 230, 0);background:inherit;">{{ error }}</span>
+            <input type="text" id="supply" name="supply" [(ngModel)]="supply" (keypress)="numberOnly($event)" [ngModelOptions]="{standalone: true}" >
+            </div>
+
+            <div class="subCategory">
+                Total Initial Whole Coin Supply: {{ totalWhole }}
+                </div>
+            <div class="subCategory baseCategory">
+            <div *ngIf="wipeKey; then wipeEnabled else wipeDisabled"></div>
+            <ng-template #wipeDisabled>
+                <a (click)="toggleWipeKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Set Wipe Key </a>
+            </ng-template>
+            <ng-template #wipeEnabled>
+                <a (click)="toggleWipeKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Wipe Key </a>
+                
+                <div class="subCategory">
+                    <div *ngIf="manualWipeKey; then manualWipeKeyEnabled else manualWipeKeyDisabled"></div>
+                <ng-template #manualWipeKeyDisabled>
+                    <a (click)="toggleManualWipeKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual Wipe Key </a>
+                </ng-template>
+                <ng-template #manualWipeKeyEnabled>
+                    <a (click)="toggleManualWipeKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual Wipe Key </a>
+                </ng-template>
+
+                <input type="text" id="wipeKey" name="wipeKey" [(ngModel)]="demoService.tokenInfo.wipeKey" [ngModelOptions]="{standalone: true}" [disabled]="!manualWipeKey">
+                
+                </div>
+            </ng-template>
+            </div>
+
+            
+            <div class="subCategory baseCategory">
+            <div *ngIf="supplyKey; then supplyEnabled else supplyDisabled"></div>
+            <ng-template #supplyDisabled>
+                <a (click)="toggleSupplyKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Set Supply Key </a>
+            </ng-template>
+            <ng-template #supplyEnabled>
+                <a (click)="toggleSupplyKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Supply Key </a>
+                
+                <div class="subCategory">
+                    <div *ngIf="manualSupplyKey; then manualSupplyKeyEnabled else manualSupplyKeyDisabled"></div>
+                <ng-template #manualSupplyKeyDisabled>
+                    <a (click)="toggleManualSupplyKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual Supply Key </a>
+                </ng-template>
+                <ng-template #manualSupplyKeyEnabled>
+                    <a (click)="toggleManualSupplyKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual Supply Key </a>
+                </ng-template>
+
+                <input type="text" id="supplyKey" name="supplyKey" [(ngModel)]="demoService.tokenInfo.supplyKey" [ngModelOptions]="{standalone: true}" [disabled]="!manualSupplyKey">
+                
+                </div>
+            </ng-template>
+            </div>
+
+            
+            <div class="subCategory baseCategory">
+                
+                
+                    <span style="color:grey; background:inherit;"><img class="appicon" src="../../assets/img/icons/circle.svg"> Custom Fees </span>
+                
+            </div>
+        </div>
+        </div>
+</div>
+      <div class="columnright">
+        <app-tokenstat></app-tokenstat>
+        </div>
+    </div>
+    </div>
+    

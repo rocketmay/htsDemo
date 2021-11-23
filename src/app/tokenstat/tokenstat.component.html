@@ -1,0 +1,118 @@
+
+<div *ngIf="demoService.tokenInfo.name != null && demoService.tokenInfo.symbol != null; then infoEnabled"></div>
+<ng-template #infoEnabled>
+        <div class="contentTitle boxShadow cornersTop">
+           TOKEN INFO
+        </div>
+            <div class="tokenBox boxShadow cornersBot">
+
+                <div *ngIf="demoService.tokenInfo.tokenId != null; then tokenIdEnabled"></div>
+                    <ng-template #tokenIdEnabled>
+                        <div class="tBoxTitle">Token ID </div>
+                        <div class="tBoxInfo"><a (click)="dragonglass()">{{ demoService.tokenInfo.tokenId }} <img src="./../../assets/img/icons/info.svg" class="appicon"></a></div>
+                        
+
+                    
+                    </ng-template>
+
+
+                
+                <div *ngIf="demoService.tokenInfo.name != null; then nameEnabled"></div>
+                    <ng-template #nameEnabled>
+                        <div class="tBoxTitle">Token Name </div>
+                        <div class="tBoxInfo">{{ demoService.tokenInfo.name }}</div>
+                    </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.symbol != null; then symbolEnabled"></div>
+                    <ng-template #symbolEnabled>
+                        <div class="tBoxTitle">Symbol </div>
+                        <div class="tBoxInfo">{{ demoService.tokenInfo.symbol }}</div>
+                    </ng-template>
+                
+                
+                <div *ngIf="demoService.tokenInfo.treasuryAccountId != null && demoService.tokenInfo.treasuryAccountId != ''; then treasuryEnabled else treasuryBlank"></div>
+                    <ng-template #treasuryEnabled>
+                        <div class="tBoxTitle">Treasury Acct </div>
+                        <div class="tBoxInfo">{{ demoService.tokenInfo.treasuryAccountId }}</div>
+                </ng-template>
+                <ng-template #treasuryBlank>
+                    <div class="tBoxTitle">Treasury Acct </div>
+                    <div class="tBoxInfo" style="color:rgb(216, 144, 156); font-style:italic">required</div>
+            </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.memo != null && demoService.tokenInfo.memo != ''; then memoEnabled"></div>
+                <ng-template #memoEnabled>
+                    <div class="tBoxTitle">Memo</div>
+                    <div class="tBoxInfo">{{ demoService.tokenInfo.memo }}</div>
+                </ng-template>
+
+
+                <BR>
+            
+                <div *ngIf="demoService.tokenInfo.decimal != null && demoService.tokenInfo.decimal != ''; then decimalEnabled"></div>
+                <ng-template #decimalEnabled>
+                    <div class="tBoxTitle">Decimals</div>
+                    <div class="tBoxInfo">{{ demoService.tokenInfo.decimal }}</div>
+                </ng-template>
+    
+                <div *ngIf="demoService.tokenInfo.initialSupply != null && demoService.tokenInfo.initialSupply != ''; then supplyEnabled"></div>
+                <ng-template #supplyEnabled>
+                    <div class="tBoxTitle">Initial Supply</div>
+                    <div class="tBoxInfo">{{ demoService.tokenInfo.initialSupply }}</div>
+                </ng-template>
+                    
+                
+                <BR>
+                <div *ngIf="demoService.tokenInfo.adminKey != null; then adminKeyEnabled"></div>
+                <ng-template #adminKeyEnabled>
+                    <div class="tBoxTitle">Admin Key</div>
+                    <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.wipeKey != null; then wipeKeyEnabled"></div>
+                <ng-template #wipeKeyEnabled>
+                    <div class="tBoxTitle">Wipe Key</div>
+                    <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.supplyKey != null; then supplyKeyEnabled"></div>
+                <ng-template #supplyKeyEnabled>
+                    <div class="tBoxTitle">Supply Key</div>
+                    <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.KYCKey != null; then KYCKeyEnabled"></div>
+                <ng-template #KYCKeyEnabled>
+                    <div class="tBoxTitle">KYC Key</div>
+                    <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                </ng-template>
+
+                <div *ngIf="demoService.tokenInfo.freezeKey != null; then freezeKeyEnabled"></div>
+                <ng-template #freezeKeyEnabled>
+                    <div class="tBoxTitle">Freeze Key</div>
+                    <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                </ng-template>
+                
+                <div *ngIf="demoService.tokenInfo.freezeKey != null; then freezeDefaultEnabled"></div>
+                <ng-template #freezeDefaultEnabled>
+                    <div class="tBoxTitle">Default Freeze</div>
+                    <div *ngIf="demoService.tokenInfo.freezeDefault == true; then freezeDefaultTrue else freezeDefaultFalse"></div>
+                    <ng-template #freezeDefaultTrue>
+                        <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/check.svg"></div>
+                    </ng-template>
+                    <ng-template #freezeDefaultFalse>
+                        <div class="tBoxInfo"><img class="appicon" src="../../assets/img/icons/circle.svg"></div>
+                    </ng-template>
+                </ng-template>
+                <BR>
+                
+                    
+                <div *ngIf="demoService.txnCreateLink != null; then txnCreateEnabled"></div>
+                <ng-template #txnCreateEnabled>
+                    <div class="tBoxTitle"><a (click)="txnCreate()">CREATE TXN <img class="appicon" src="../../assets/img/icons/info.svg"></a> </div>
+                    
+                </ng-template>
+
+                    
+        </div>
+</ng-template>

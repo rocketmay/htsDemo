@@ -1,0 +1,46 @@
+
+        <div class="header">
+          <h2>HEDERA TOKEN SERVICE</h2>
+        </div>
+        
+        <div class="menuSection">
+        <h2>ENTER TOKEN INFO</h2>
+        <a routerLink="/basics" routerLinkActive="menuItemSelect" class="menuItem">BASICS</a><BR>
+        
+        <a routerLink="/tokenomics" routerLinkActive="menuItemSelect" class="menuItem">TOKENOMICS</a><BR>
+        
+        <a routerLink="/usermgmt" routerLinkActive="menuItemSelect" class="menuItem">USER MANAGEMENT</a>
+        
+        </div>
+      
+        <div class="menuSection">
+          
+          <div *ngIf="minReqsMet(); then createEnabled"></div>
+            <ng-template #createEnabled>
+              <a routerLink="/create" routerLinkActive="menuItemSelect" class="menuItem">CREATE TOKEN</a><BR>      
+            </ng-template>
+          
+            <div *ngIf="submitReqsMet(); then submitEnabled"></div>
+            <ng-template #submitEnabled>
+              <a routerLink="/submit" routerLinkActive="menuItemSelect" class="menuItem">SIGN AND SUBMIT</a><BR>      
+            </ng-template>
+          
+            <div *ngIf="receiptReqsMet(); then receiptEnabled"></div>
+            <ng-template #receiptEnabled>
+              <a routerLink="/receipt" routerLinkActive="menuItemSelect" class="menuItem">PROCESS RECEIPT</a><BR>      
+            </ng-template>
+          
+          
+          
+          </div>
+
+          
+        <div class="menuSection">
+          
+          <div *ngIf="transferReqsMet(); then transferEnabled"></div>
+            <ng-template #transferEnabled>
+              <a routerLink="/transfer" routerLinkActive="menuItemSelect" class="menuItem">TRANSFER</a><BR>      
+            </ng-template>
+          
+          
+          </div>

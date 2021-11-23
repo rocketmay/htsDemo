@@ -1,0 +1,110 @@
+
+<div class="fill">
+    <div class="row">
+      <div class="columnleft">
+        <app-left-menu></app-left-menu>
+      </div>
+  
+      <div class="column">
+    
+        <div class="contentTitle boxShadow cornersAll contentHeader">
+            BASIC TOKEN INFO
+        </div>
+
+        <div class="contentTitle boxShadow cornersTop">
+            REQUIRED FIELDS
+        <div class="contentright">
+            <!--<img src="./../../assets/img/icons/hamburger-menu.svg" class="appicon">-->
+        </div>
+        </div>
+        
+        <div class="contentBody boxShadow cornersBot">
+            <div class="contentLeft">
+            <div class="subCategory">
+            Token Name
+            <input type="text" class="info" id="tokenName" name="tokenName" [(ngModel)]="demoService.tokenInfo.name" [ngModelOptions]="{standalone: true}" >
+            </div>
+            <div class="subCategory">
+            Token Symbol
+            <input type="text" id="tokenSymbol" name="tokenSymbol" [(ngModel)]="demoService.tokenInfo.symbol" [ngModelOptions]="{standalone: true}" >
+            </div>
+            <div *ngIf="isTreasuryDisabled(); then mtDisabled else mtEnabled"></div>
+                <ng-template #mtDisabled>
+                    <a (click)="toggleManualTreasury()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual Treasury Account Entry </a>
+                </ng-template>
+                <ng-template #mtEnabled>
+                    <a (click)="toggleManualTreasury()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual Treasury Account Entry </a>
+                </ng-template>
+                    <div class="subCategory">
+                    Treasury Account ID
+                    <input type="text" id="treasuryAccountID" name="treasuryAccountID" [(ngModel)]="demoService.tokenInfo.treasuryAccountId" [ngModelOptions]="{standalone: true}" [disabled]="isTreasuryDisabled()">
+                    <div *ngIf="!isTreasuryDisabled(); then mtKey"></div>
+                        <ng-template #mtKey>
+                        Treasury Private Key
+                        <input type="text" id="treasuryPrivateKey" name="treasuryPrivateKey" [(ngModel)]="demoService.tokenInfo.treasuryKey" [ngModelOptions]="{standalone: true}" [disabled]="isTreasuryDisabled()">
+                    </ng-template>
+                    </div>
+            </div>
+            
+        </div>
+
+
+
+        <div class="contentTitle boxShadow cornersTop">
+            MISC
+        <div class="contentright">
+            <!--<img src="./../../assets/img/icons/hamburger-menu.svg" class="appicon">-->
+        </div>
+        </div>
+        
+        <div class="contentBody boxShadow cornersBot">
+            <div class="contentLeft">
+            <div *ngIf="isAdminDisabled(); then adminDisabled else adminEnabled"></div>
+                <ng-template #adminDisabled>
+                    <a (click)="toggleAdminKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Set Admin Key </a>
+                </ng-template>
+                <ng-template #adminEnabled>
+                    <a (click)="toggleAdminKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Admin Key </a>
+                    
+                    <div class="subCategory">
+                        <div *ngIf="manualAdminKey; then manualAdminKeyEnabled else manualAdminKeyDisabled"></div>
+                    <ng-template #manualAdminKeyDisabled>
+                        <a (click)="toggleManualAdminKey()"><img class="appicon" src="../../assets/img/icons/circle.svg"> Manual Admin Key </a>
+                    </ng-template>
+                    <ng-template #manualAdminKeyEnabled>
+                        <a (click)="toggleManualAdminKey()"><img class="appicon" src="../../assets/img/icons/check.svg"> Manual Admin Key </a>
+                    </ng-template>
+
+                    <input type="text" id="adminKey" name="adminKey" [(ngModel)]="demoService.tokenInfo.adminKey" [ngModelOptions]="{standalone: true}" [disabled]="!manualAdminKey">
+                    
+                    </div>
+                </ng-template>
+
+                <div class="subCategory">
+                Memo
+                <input type="text" id="tokenMemo" name="tokenMemo" [(ngModel)]="demoService.tokenInfo.memo" [ngModelOptions]="{standalone: true}" >
+                </div>    
+                
+                <div class="subCategory">
+                    Auto Renew Period
+                    <input type="text" [disabled]="true" value="~90 days">
+
+                </div>    
+                <div class="subCategory">
+                    Auto Renew Account
+                    <input type="text" [disabled]="true"  value="N/A"> 
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+
+      </div>
+      <div class="columnright">
+        <app-tokenstat></app-tokenstat>
+        </div>
+    </div>
+    </div>
+    

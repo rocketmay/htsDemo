@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+    background-color: #46689A;
+
+  }
+
+  [ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}
+a:hover {
+ cursor:pointer;
+}
+  
+  .fill {
+    background-color: #46689A;
+    width:99%;
+  }
+
+  body {
+    background-color: #46689A;
+    margin: 0;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #294168;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+
+  a {
+    background-color: inherit;
+    
+  }
+  a:link {
+    background-color: inherit;
+    width:auto;
+    padding-right:100%;
+  }
+
+
+  h1 {
+    font-family: Saira;
+    //font-style: regular;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+  }
+
+
+  h2 {
+    font-family: Saira;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 50px;
+
+    padding-left:10px;
+    border-radius:10px 0px 0px 10px;
+    box-shadow: 2px 2px;
+    color: #FFFFFF;
+  }
+
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Create columns that floats next to each other */
+  .column {
+    //background-color: #46689A;
+    background-image: url("./../../assets/img/theme/softpattern.jpg"); 
+    float: left;
+    height:1400px;
+    flex: 50%;
+    padding: 80px;
+    
+    border-left-style: solid;
+    border-left-color: white;
+    padding-right:0px;
+  }
+  .columnright {
+    //background-color: #46689A;
+    background-image: url("./../../assets/img/theme/softpattern.jpg"); 
+    
+    float: left;
+    flex: 15%;
+    padding: 20px;
+    padding-top:100px;
+    
+  }
+
+  .columnleft {
+    background-color: #294168;
+    float: left;
+    flex: 12%;
+    padding-left: 30px;
+    border-style: none;
+  }
+
+  .menuItem
+  {
+    background-color:inherit;
+    padding-left:30px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 40px;
+    color: #FFFFFF;
+    white-space: nowrap;
+
+  }
+
+  .menuItemSelect
+  {
+    background-image:url("./../../assets/img/theme/softpattern.jpg");
+    padding-left:30px;
+    margin-bottom:10px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 40px;
+    background-color: #4B7DC4;
+    color: #FFFFFF;
+    border-radius:10px;
+    box-shadow:0px 3px #FFFFFF;
+
+  }
+
+  .row {
+      display:flex;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    background-color: #46689A;
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .contentHeader
+  {
+    text-align: center;
+  }
+  
+  .contentTitle
+  {
+    background: #4B7DC5;
+        
+    height: 45px; 
+    padding-left:20px;
+    padding-top:12px;
+    margin-top:20px;
+    font-family: Secular One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 20px;
+    margin-right:20px;
+
+    color: #FFFFFF;
+  }
+
+  .cornersAll
+  {
+    border-radius:5px;
+  }
+
+  .cornersTop
+  {
+    border-radius:5px 5px 0px 0px;
+  }
+
+  .cornersBot
+  {
+    border-radius:0px 0px 5px 5px;
+  }
+
+  .contentBody
+  {
+    background: #3B5881;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 45px;
+    padding-left:30px;
+    margin-right:20px;
+
+    color: #FFFFFF;
+  }
+
+  .console
+  {
+    height:500px;
+    word-break:break-all;
+    white-space:pre-wrap;
+    overflow: auto;
+    display:inline-block;
+    width:98%;
+    margin-right:20px;
+  }
+
+  .boxShadow
+  {
+    box-shadow: 10px 10px #294168;
+  }
+
+  .contentright
+  {
+    float:right;
+    padding-right:20px;
+    background-color: inherit;
+  }
+
+  .appicon
+  {
+    height:25px;
+    width:25px;
+    background-color:inherit;
+  }
+
+  .contentLeft
+  {
+    padding-top:20px;
+    padding-bottom:20px;
+    width:100%;
+    background-color: inherit;
+  }
+
+  input {
+    display: block;
+    width:100%;
+    background: #5976a1;
+    font-family: Ropa Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    border:none;
+    color: #FFFFFF;
+    padding-left:20px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+  
+  input:disabled
+  {
+    color:#FFFFFF;
+    background-color: #3B5881;
+  }
+
+  .subCategory
+  {
+    padding-left:30px;
+    background-color:inherit;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    margin-bottom:10px;
+  }
+
+  .baseCategory
+  {
+    padding-left:0px;
+  }
+
+  .menuSection
+  {
+    background-color:#294168;
+    padding-bottom:50px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+  }
+  .userBox
+  {
+    margin-top:20px;
+    border-radius:5px;
+    box-shadow:10px 10px #294168;
+    background-color:#4B7DC5;
+    padding-left:20px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-right:20px;
+  }
+
+  .userToken
+  {
+    padding-top:20px;
+    margin:0 auto;
+    border-top-style:ridge;
+    border-top-color:white;
+    background:inherit;
+  }
+
+  .userColumn
+  {
+    float:left;
+    background:inherit;
+  }
+
+  .tokenBox
+  {
+    background-color:#4B7DC5;
+    padding-left:30px;
+    padding-bottom:50px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    height:700px;
+    margin-right:20px;
+  }
+
+  .tBoxTitle
+  {
+    float: left;
+    width:150px;
+    color:#2a4770;
+    background-color:inherit;
+  }
+  
+  .tBoxInfo
+  {
+    padding-left:20px;
+    width:300px;
+    word-wrap:break-word;
+    background-color:inherit;
+  }
+  
+  .buttonBlue 
+  {
+    margin: 0 auto;
+    display: block;
+    background: #357FEB;
+    border-radius: 5px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    padding-left:20px;
+    padding-right:20px;
+    
+    border-style:none;
+
+    color: #FFFFFF;
+
+  }
+
+  .selectBlue 
+  {
+    margin: 0 auto;
+    background: #5976a1;
+    border-radius: 5px;
+    font-family: Saira;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    padding-left:20px;
+    padding-right:20px;
+    
+    border-style:none;
+
+    color: #FFFFFF;
+
+  }
+
+
+  .centerDiv
+  {
+    
+    margin-top:30px;
+    margin-bottom:30px;
+    background:inherit;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2c64b8; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #357FEB; 
+}
+
+.textYellow
+{
+  color:yellow;
+}
+
+.list-group
+{
+  list-style-type: none;
+background: inherit;
+padding:0px;
+margin:auto;
+}
+
+.list-group-item
+{
+  background: inherit;
+  padding:0px;
+  border-style:none;
+}
+
+.list-group-item:hover
+{
+  background:#357FEB;
+}
