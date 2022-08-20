@@ -35,6 +35,7 @@ export class CreateTokenComponent implements OnInit {
         this.stepTitle = "Step 3: Receive Receipt";
         this.buttonTitle = "PROCESS RECEIPT";
         this.consoleText = this.demoService.consoleReceipt;
+        
         this.processReceipt();
         break;
       default:
